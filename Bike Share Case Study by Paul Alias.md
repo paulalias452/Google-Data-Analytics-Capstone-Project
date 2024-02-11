@@ -691,3 +691,33 @@ We could see that after cleaning the data, the number of rides we had in the yea
 ![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/04e7c4e7-4cae-4ee8-a26f-b831e01abfa6)
 
 2) The users preferred a classic bike much more than the Docked or electric bikes and it can be observed that only the casual riders use the docked bikes.
+
+![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/5cc2c319-09de-401a-8099-a4aed7624e92)
+
+3) The number of classic bike used are thrice the amount of the electric bikes and the docked bikes were used only 1/10 th of the casual bikes.
+
+![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/62eeb537-6fa4-41ac-b03e-b4c08e74ef7e)
+
+4) We can see that the afternoon is the most preferred time of app usage and riders actively using the bike
+
+![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/53262e15-b679-4148-a542-ce9042774225)
+
+5) Saturday and Sunday shows the highest number of rides among the days of the week. It also shows the distribution of casual and member riders showing member riders commuting on the weekdays and casual riders dominant over the weekends.
+
+![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/7c12591d-e368-4fa8-ad33-3f6281c36076)
+
+6) Summers are the most preferred time of the year implying the most usage in the season and creating the perfect time for advertising and marketing opportunities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
