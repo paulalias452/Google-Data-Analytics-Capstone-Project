@@ -678,6 +678,16 @@ combined_date %>%
 
 ## Using Power BI for visualization we could observe
 
-![Google_DA_DB_1](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/1fe963e0-97b6-4246-b4dc-b9c98881713d)
+### Summary
 
+![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/5f2c1342-7ddc-43a2-9092-abb6da65c547)
 
+We could see that after cleaning the data, the number of rides we had in the year 2021 was 4.51 Mn with average duration being 21.94 minutes. The Summers were the busiest and users preferred to ride in the afternoon and Saturday was the weekday with highest rides. 
+
+![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/491bd2a1-b599-4987-a6cd-76d8a9940006)
+
+1) The total number of rides follow a pattern where it peaks over the summer season and falls over the winters implying the effect of weather and climate on the app usage.
+
+![image](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/04e7c4e7-4cae-4ee8-a26f-b831e01abfa6)
+
+2) The users preferred a classic bike much more than the Docked or electric bikes and it can be observed that only the casual riders use the docked bikes.
