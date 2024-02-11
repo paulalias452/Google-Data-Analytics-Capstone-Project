@@ -665,7 +665,11 @@ combined_date %>%
   summarise_at(vars(ride_length),
                list(time = mean))
 
-#average ride length 
+#average ride length
+
+### Using the cleaned data for Visualizations using Power BI
+
+
 combined_date %>% 
   group_by(season) %>% 
   summarise_at(vars(ride_length),
