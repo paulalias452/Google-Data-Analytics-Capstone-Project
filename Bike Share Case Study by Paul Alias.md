@@ -18,7 +18,7 @@ In this case study, the six steps of the data analysis process will be used in o
 5. Share
 6. Act
 
-## The key questions
+## The Key Questions
 
 So here are the analysis questions that will help in the analysis:
 
@@ -26,7 +26,7 @@ So here are the analysis questions that will help in the analysis:
 2. What are the causes that drive casual riders to buy Cyclistic annual memberships?
 3. How can Cyclistic use digital media as a tool to convert casual riders to members?
 
-## The Data given
+## The Data Given
 
 **Data Source**:  Cyclistic’s historical trip data from Jan 2021 to Dec 2021 which is a public dataset published by Motivate International Inc. will be used to analyze and identify trends.
 
