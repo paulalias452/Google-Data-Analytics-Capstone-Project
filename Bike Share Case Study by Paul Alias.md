@@ -676,3 +676,8 @@ combined_date %>%
                list(time = mean))
 ```
 
+## Using Power BI for visualization we could observe
+
+![Google_DA_DB_1](https://github.com/paulalias452/Google-Data-Analytics-Capstone-Project/assets/88573857/1fe963e0-97b6-4246-b4dc-b9c98881713d)
+
+
