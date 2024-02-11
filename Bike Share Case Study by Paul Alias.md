@@ -188,3 +188,161 @@ View(combined_date)
 fwrite(combined_date,"bikeshare_data.csv")
 
 ```
+### Explorig the cleaned dataset
+
+The total number of rides are given by 
+```
+
+#total number of rides
+nrow(combined_date)
+
+```
+
+The number of casual rides and member rides on different bike types are
+
+```
+#total rides by member type 
+combined_date %>%
+  group_by(member_casual, rideable_type) %>% 
+  count(rideable_type)
+
+```
+The different ride types available are
+
+```
+combined_date %>%
+  group_by(rideable_type) %>% 
+  count(rideable_type)
+```
+
+The number of rides per each hour of day and the rides by member types are given by
+
+```
+
+#total rides by member type 
+combined_date %>%
+  group_by(member_casual) %>% 
+  count(hour) %>% 
+  print(n = 48) #lets you view the entire tibble
+
+#total rides
+combined_date %>%
+  count(hour) %>% 
+  print(n = 24) #lets you view the entire tibble
+
+```
+
+The number of rides per time of day and the rides by member types are given by
+
+```
+#-----morning-------
+#total rides by member type 
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Morning") %>% 
+  count(time_of_day)
+
+#total rides
+combined_date %>%
+  filter(time_of_day == "Morning") %>% 
+  count(time_of_day)
+
+#-----afternoon-------
+#total rides by member type 
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Afternoon") %>% 
+  count(time_of_day)
+
+#total rides 
+combined_date %>%
+  filter(time_of_day == "Afternoon") %>% 
+  count(time_of_day)
+
+#-----evening-------
+#total rides by member type
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Evening") %>% 
+  count(time_of_day)
+
+#total rides
+combined_date %>%
+  filter(time_of_day == "Evening") %>% 
+  count(time_of_day)
+
+#-----night-------
+#number of rides by member type
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Night") %>% 
+  count(time_of_day)
+
+#number of rides 
+combined_date %>%
+  filter(time_of_day == "Night") %>% 
+  count(time_of_day)
+
+
+#---all times of day----
+#total rides by member type 
+combined_date %>%
+  group_by(member_casual) %>% 
+  count(time_of_day)
+
+#number of rides
+combined_date %>%
+  group_by(time_of_day) %>% 
+  count(time_of_day)
+```
+
+
+The number of rides per the day of the week and the rides by member types are given by
+
+```
+#----------------DAY OF THE WEEK------------------
+
+#total rides by member type
+combined_date %>%
+  group_by(member_casual) %>% 
+  count(day_of_week)
+
+#total rides 
+combined_date %>%
+  count(day_of_week)
+```
+
+The number of rides per the month and the rides by member types are given by
+
+```
+#---------------------MONTH-----------------------
+
+#total rides by member type 
+combined_date %>%
+  group_by(member_casual) %>% 
+  count(month) %>% 
+  print(n = 24) #lets you view the entire tibble
+
+#total rides
+combined_date %>%
+  count(month)
+```
+
+
+The number of rides per day of the month and the rides by member types are given by
+
+```
+#----------------DAY OF THE MONTH-----------------
+
+#total rides by member type
+combined_date %>%
+  group_by(member_casual) %>% 
+  count(day) %>% 
+  print(n = 62) #lets you view the entire tibble
+
+#total rides
+combined_date %>%
+  count(day) %>% 
+  print(n = 31) #lets you view the entire tibble
+```
+
