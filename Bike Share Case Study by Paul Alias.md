@@ -346,3 +346,329 @@ combined_date %>%
   print(n = 31) #lets you view the entire tibble
 ```
 
+The number of rides per season and the rides by member types are given by
+```
+#--------------------SEASON-----------------------
+
+#-----spring-------
+
+#total rides by member type 
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(season == "Spring") %>% 
+  count(season)
+
+#total rides
+combined_date %>%
+  filter(season == "Spring") %>% 
+  count(season)
+#-----summer-------
+
+#total rides by member type
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(season == "Summer") %>% 
+  count(season)
+
+#total rides
+combined_date %>%
+  filter(season == "Summer") %>% 
+  count(season)
+
+#-----fall-------
+
+#total rides by member type
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(season == "Fall") %>% 
+  count(season)
+
+#total rides
+combined_date %>%
+  filter(season == "Fall") %>% 
+  count(season)
+
+#-----winter-------
+
+#total rides by member type
+combined_date %>%
+  group_by(member_casual) %>% 
+  filter(season == "Winter") %>% 
+  count(season)
+
+#total rides 
+combined_date %>%
+  filter(season == "Winter") %>% 
+  count(season)
+
+#-----all seasons-------
+
+#total rides by member type
+combined_date %>%
+  group_by(season, member_casual) %>% 
+  count(season)
+
+#total rides
+combined_date %>%
+  group_by(season) %>% 
+  count(season)
+
+
+```
+
+The average ride length or duration computed by
+
+```
+#------------------------------------AVERAGE RIDE LENGTH-----------------------------------
+
+#average of ride_length
+cyclistic_avgRide <- mean(combined_date$ride_length)
+print(cyclistic_avgRide)
+```
+
+The average ride duration by member type and ride type
+
+```
+#------------------MEMBER TYPE--------------------
+
+#average ride_length
+combined_date %>% group_by( member_casual) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#----------------TYPE OF BIKE---------------------
+
+#total rides by member type 
+combined_date %>% group_by(member_casual, rideable_type) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride_length
+combined_date %>% group_by(rideable_type) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+```
+
+The average ride duration by hour of day
+
+#-----------------------HOUR-------------------------
+```
+#average ride_length by member type
+combined_date %>% group_by(hour, member_casual) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean)) %>% 
+  print(n=48) #lets you view entire tibble
+
+#average ride_length
+combined_date %>% group_by(hour) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean)) %>% 
+  print(n=24) #lets you view entire tibble
+```
+The average ride duration by time of day
+
+```
+#--------------------TIME OF DAY---------------------
+
+#----morning----
+
+#average ride length by member type
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Morning") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  filter(time_of_day == "Morning") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#----afternoon----
+
+#average ride length by member type
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Afternoon") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  filter(time_of_day == "Afternoon") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#----evening----
+
+#average ride length by member type
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Evening") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  filter(time_of_day == "Evening") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#----night----
+
+#average ride length by member type 
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(time_of_day == "Night") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  filter(time_of_day == "Night") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#---all times of day---
+
+#average ride length by member type
+combined_date %>% 
+  group_by(time_of_day, member_casual) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  group_by(time_of_day) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+```
+
+The average ride duration by day of week
+```
+#-------------------DAY OF THE WEEK-----------------
+
+#average ride_length by member type
+combined_date %>% group_by(member_casual, day_of_week) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride_length 
+combined_date %>% group_by(day_of_week) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+```
+
+The average ride duration by day of month
+```
+#-----------------DAY OF THE MONTH------------------
+
+#average ride_length by member type
+combined_date %>% group_by(day, member_casual) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean)) %>% 
+  print(n=62)  #lets you view entire tibble
+
+#average ride_length
+combined_date %>% group_by(day) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean)) %>% 
+  print(n=31)  #lets you view entire tibble
+```
+The average ride duration by month
+```
+#---------------------MONTH--------------------------
+
+#average ride_length by member type
+combined_date %>% group_by(month, member_casual) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean)) %>% 
+  print(n=24)  #lets you view entire tibble
+
+#average ride_length
+combined_date %>% group_by(month) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+```
+The average ride length by Season
+
+```
+
+#----------------------SEASON-------------------------
+
+#-----spring------
+
+#average ride length by member type
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(season == "Spring") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  filter(season == "Spring") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#-----summer------
+
+#average ride length by member type for summer 
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(season == "Summer") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length for summer 
+combined_date %>% 
+  filter(season == "Summer") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#-----fall------
+
+#average ride length by member type
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(season == "Fall") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  filter(season == "Fall") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#-----winter-----
+
+#average ride length by member type
+combined_date %>% 
+  group_by(member_casual) %>% 
+  filter(season == "Winter") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length
+combined_date %>% 
+  filter(season == "Winter") %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#----all seasons----
+
+#average ride length by member type
+combined_date %>% 
+  group_by(season, member_casual) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+
+#average ride length 
+combined_date %>% 
+  group_by(season) %>% 
+  summarise_at(vars(ride_length),
+               list(time = mean))
+```
+
