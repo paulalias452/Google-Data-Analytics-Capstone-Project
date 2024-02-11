@@ -58,7 +58,7 @@ library(hms) #time
 library(data.table) #exporting data frame
 ```
 
-###Loadin the data for 2021 monthwise
+### Loading the data for 2021 monthwise
 
 ```
 #load original .csv files, a years worth of data from August 2020 to July 2021
@@ -87,12 +87,18 @@ remove(aug08_df, sep09_df, oct10_df, nov11_df, dec12_df, jan01_df, feb02_df, mar
 
 combined_date <- combined_df 
 ```
-
+### Calculating the ride time for each bike share ride
 ```
 #calculate ride length by subtracting ended_at time from started_at time and converted it to minutes
 combined_date$ride_length <- difftime(combined_df$ended_at, combined_df$started_at, units = "mins")
 ```
-
+### Creating specific columns required for our analysis -
+  Weekday
+  Month
+  Day
+  Hour
+  Time
+  
 
 ```
 #create columns for: day of week, month, day, year, time, hour
@@ -107,7 +113,7 @@ combined_date$time <- as_hms((combined_date$started_at)) #create new column for 
 combined_date$hour <- hour(combined_date$time) #create new column for hour
 
 ```
-
+### Creating the column for Seasons
 
 ```
 #create column for different seasons: Spring, Summer, Fall, Winter
@@ -126,7 +132,7 @@ combined_date <-combined_date %>% mutate(season =
                                                        month == "02" ~ "Winter"))
 
 ```
-
+### Creating the column for time of the day classification
 
 ```
 #create column for different time_of_day: Night, Morning, Afternoon, Evening
@@ -158,7 +164,10 @@ combined_date <-combined_date %>% mutate(time_of_day =
 )
 
 ```
-
+### Cleaning the Data: We follow the steps given below
+  * To delete rows with null values
+  * To remove ride data with ride length less than or equal to 0
+  * To remove unwanted columns from analysis
 
 ```
 #clean the data
@@ -169,7 +178,7 @@ combined_date <- combined_date %>%  #remove columns not needed: ride_id, start_s
   select(-c(start_station_id, end_station_id,start_lat,start_lng,end_lat,end_lng)) 
 
 ```
-
+### We view the data and download it as a CSV for EDA and dashboarding
 
 ```
 #view the final data
